@@ -3,6 +3,7 @@ import React from "react";
 import AppHeader from "../../components/AppHeader";
 import Footer from "../../components/Footer";
 import Main from "../../components/Main";
+// eslint-disable-next-line import/default
 import NewProductForm from "../../components/NewProductForm";
 
 function NewProduct({ saveNewProduct }) {

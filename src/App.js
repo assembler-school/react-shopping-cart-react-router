@@ -258,8 +258,8 @@ class App extends Component {
         <Route
           path="/new-product"
           exact
-          render={(routerProps) => (
-            <NewProduct {...routerProps} saveNewProduct={this.saveNewProduct} />
+          render={(routeProps) => (
+            <NewProduct {...routeProps} saveNewProduct={this.saveNewProduct} />
           )}
         />
       </BrowserRouter>

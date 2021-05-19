@@ -32,7 +32,6 @@ function addProductDetails(product) {
     },
   };
 }
-
 // eslint-disable-next-line react/prefer-stateless-function
 class NewProductForm extends Component {
   constructor(props) {
@@ -41,16 +40,14 @@ class NewProductForm extends Component {
       submitted: false,
     };
 
-    this.setSubmitted = this.setSubmitted(this);
+    this.setSubmitted = this.setSubmitted.bind(this);
   }
 
   setSubmitted() {
     setTimeout(() => {
-      this.setState((prevState) => ({
-        submitted: !prevState.submitted,
-      }));
+      this.setState({ submitted: true });
       // eslint-disable-next-line no-console
-      console.log("Product submitted!");
+      console.log("Submitted product!");
     }, 500);
   }
 
