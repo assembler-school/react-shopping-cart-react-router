@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-// import NewProduct from "./pages/NewProduct";
+import NewProduct from "./pages/NewProduct";
 
 import * as api from "./api";
 
@@ -228,16 +228,12 @@ class App extends Component {
   }
 
   render() {
-    const {
-      cartItems,
-      products,
-      isLoading,
-      hasError,
-      loadingError,
-    } = this.state;
+    const { cartItems, products, isLoading, hasError, loadingError } =
+      this.state;
 
     return (
       <BrowserRouter>
+        {/* Home route */}
         <Route
           path="/"
           exact
@@ -258,7 +254,14 @@ class App extends Component {
             />
           )}
         />
-        {/* route path="/new-product" <NewProduct ...stuff /> */}
+        {/* Form route */}
+        <Route
+          path="/new-product"
+          exact
+          render={(routeProps) => (
+            <NewProduct {...routeProps} saveNewProduct={this.saveNewProduct} />
+          )}
+        />
       </BrowserRouter>
     );
   }
