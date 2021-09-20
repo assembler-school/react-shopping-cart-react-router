@@ -238,8 +238,8 @@ class App extends Component {
     } = this.state;
 
     return (
-      <>
-      <BrowserRouter/>
+
+    <BrowserRouter>
         <Route
           path="/"
           exact
@@ -263,13 +263,13 @@ class App extends Component {
         <Route path="/new-product" 
         exact
         render={(routeProps)=>(
-          <NewProductForm 
+          <newProduct
         {...routeProps}
         saveNewProduct={this.saveNewProduct}
         />
         )}/>
-      <BrowserRouter/>
-      </>
+      </BrowserRouter>
+      
     );
   }
 }
