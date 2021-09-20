@@ -253,7 +253,12 @@ class App extends Component {
             />
           )}
         />
-        <Route path="/new-product" render={(routeProps) => <NewProduct />} />
+        <Route
+          path="/new-product"
+          render={(routeProps) => (
+            <NewProduct {...routeProps} saveNewProduct={this.saveNewProduct} />
+          )}
+        />
       </BrowserRouter>
     );
   }
