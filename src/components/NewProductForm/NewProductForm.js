@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import { Formik } from "formik";
 
@@ -35,13 +35,21 @@ function addProductDetails(product) {
 
 // eslint-disable-next-line react/prefer-stateless-function
 class NewProductForm extends Component {
-  // ...
-  // state: {
-  //   submitted: false
-  // }
-  // ...
+  constructor(props) {
+    super(props)
+    this.state = {
+      submitted: false
+    }
+
+    this.setSubmitted = this.setSubmitted.bind(this)
+  }
+
+  setSubmitted () {
+    this.setState({ submitted: true })
+  }
+
   render() {
-    // const { submitted } = this.state;
+    const { submitted } = this.state;
     const { saveNewProduct } = this.props;
 
     return (
@@ -63,7 +71,7 @@ class NewProductForm extends Component {
             const newProduct = addProductDetails(values);
             saveNewProduct(newProduct);
             setSubmitting(true);
-            // this.setSubmitted();
+            this.setSubmitted();
           }}
         >
           {({
@@ -183,7 +191,7 @@ class NewProductForm extends Component {
             </form>
           )}
         </Formik>
-        {/* {submitted && <Redirect to="/" />} */}
+        {submitted && <Redirect to="/" />}
       </>
     );
   }
