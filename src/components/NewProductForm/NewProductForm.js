@@ -7,7 +7,6 @@ import Input from "../Input";
 import Button from "../Button";
 
 import productSchema from "./product-schema";
-import { setConstantValue } from "typescript";
 
 function addProductDetails(product) {
   return {
@@ -35,13 +34,20 @@ function addProductDetails(product) {
 }
 
 class NewProductForm extends Component {
-  setTimeout(() => {
-    setState(submitted: false);
-  
-      
-    
-  }, 500);
-   
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      submitted: false,
+    };
+    this.setSubmitted = this.setSubmitted.bind(this);
+  }
+
+  setSubmitted() {
+    setTimeout(() => {
+      this.setState({ submitted: true });
+    }, 500);
+  }
   render() {
     const { submitted } = this.state;
     const { saveNewProduct } = this.props;
@@ -185,7 +191,7 @@ class NewProductForm extends Component {
             </form>
           )}
         </Formik>
-        {/* {submitted && <Redirect to="/" />} */}
+        {submitted && <Redirect to="/" />}
       </>
     );
   }
