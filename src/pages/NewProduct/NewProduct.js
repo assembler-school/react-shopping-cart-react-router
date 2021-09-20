@@ -1,5 +1,4 @@
 import React from "react";
-
 import AppHeader from "../../components/AppHeader";
 import Footer from "../../components/Footer";
 import Main from "../../components/Main";
@@ -7,7 +6,7 @@ import NewProductForm from "../../components/NewProductForm";
 
 function NewProduct({ saveNewProduct }) {
   return (
-    <>
+    <React.Fragment>
       <AppHeader />
       <Main className="container">
         <div className="row justify-content-center">
@@ -28,7 +27,7 @@ function NewProduct({ saveNewProduct }) {
         </div>
       </Main>
       <Footer />
-    </>
+    </React.Fragment>
   );
 }
 
