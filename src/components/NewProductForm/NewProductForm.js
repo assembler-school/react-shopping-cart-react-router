@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import { Formik } from "formik";
 
@@ -33,16 +33,12 @@ function addProductDetails(product) {
   };
 }
 
-// eslint-disable-next-line react/prefer-stateless-function
+//eslint-disable-next-line react/prefer-stateless-function
 class NewProductForm extends Component {
-  // ...
-  // state: {
-  //   submitted: false
-  // }
-  // ...
-  render() {
-    // const { submitted } = this.state;
-    const { saveNewProduct } = this.props;
+
+   render() {
+  //   const { submitted } = this.state;
+     const { saveNewProduct } = this.props;
 
     return (
       <>
