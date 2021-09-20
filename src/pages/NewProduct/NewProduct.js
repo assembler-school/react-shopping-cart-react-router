@@ -5,8 +5,30 @@ import Footer from "../../components/Footer";
 import Main from "../../components/Main";
 import NewProductForm from "../../components/NewProductForm";
 
-function NewProduct({ saveNewProduct }) {
+class NewProduct extends React.Component {
+  constructor(props) {
+        super(props);
+        this.state = {
+          submitted: false
+        }
+        this.setSubmitted = this.setSubmitted.bind(this); 
+    }
+
+    
+      setSubmitted() {
+        setTimeout(() => {
+          this.setState({
+            submitted: true,
+          });
+        }, 500);
+      }
+
+render(){
+  const {submitted} = this.state;
+const{saveNewProduct}=this.props
+{submitted && <Redirect to="/" />}
   return (
+   
     <>
       <AppHeader />
       <Main className="container">
@@ -31,5 +53,7 @@ function NewProduct({ saveNewProduct }) {
     </>
   );
 }
+}
+
 
 export default NewProduct;
