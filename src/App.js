@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import NewProductForm from "./components/NewProductForm";
 
 import Home from "./pages/Home";
-// import NewProduct from "./pages/NewProduct";
 
-import * as api from "./api";
+
+
 
 const LOCAL_STORAGE_KEY = "react-sc-state";
 
@@ -237,7 +238,8 @@ class App extends Component {
     } = this.state;
 
     return (
-      <BrowserRouter>
+
+    <BrowserRouter>
         <Route
           path="/"
           exact
@@ -258,8 +260,16 @@ class App extends Component {
             />
           )}
         />
-        {/* route path="/new-product" <NewProduct ...stuff /> */}
+        <Route path="/new-product" 
+        exact
+        render={(routeProps)=>(
+          <newProduct
+        {...routeProps}
+        saveNewProduct={this.saveNewProduct}
+        />
+        )}/>
       </BrowserRouter>
+      
     );
   }
 }
