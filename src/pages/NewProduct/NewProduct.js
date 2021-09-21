@@ -7,7 +7,7 @@ import NewProductForm from "../../components/NewProductForm";
 
 function NewProduct({ saveNewProduct }) {
   return (
-    <>
+    <div>
       <AppHeader />
       <Main className="container">
         <div className="row justify-content-center">
@@ -28,7 +28,7 @@ function NewProduct({ saveNewProduct }) {
         </div>
       </Main>
       <Footer />
-    </>
+    </div>
   );
 }
 
