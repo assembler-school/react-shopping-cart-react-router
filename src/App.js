@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-// import NewProduct from "./pages/NewProduct";
+import NewProduct from "./pages/NewProduct";
 
 import * as api from "./api";
 
@@ -258,7 +258,13 @@ class App extends Component {
             />
           )}
         />
-        {/* route path="/new-product" <NewProduct ...stuff /> */}
+        <Route exact path="/new-product" render={(routeProps) => (
+            <NewProduct
+              {...routeProps}
+              saveNewProduct={this.saveNewProduct}
+            />
+          )} />
+        {/* { route path="/new-product" <NewProduct ...stuff /> } */}
       </BrowserRouter>
     );
   }
